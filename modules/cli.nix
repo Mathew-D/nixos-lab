@@ -24,5 +24,8 @@
     wl-clipboard
     wayland-utils
 
+    #Dev Tools
+    jdk21
+
   ];
 }
