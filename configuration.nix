@@ -6,7 +6,7 @@
     ./desktop/plasma.nix
     ./users
     ./modules/cli.nix
-    ./modules/gui.nix
+    ./modules/apps.nix
     ./modules/shell.nix
   ];
 
