@@ -2,8 +2,20 @@
 
 {
   environment.systemPackages = with pkgs; [
-    git
+    # Core
     curl
     wget
+    git
+    file
+    unzip
+    zip
+
+    # Modern CLI tools
+    fd
+    ripgrep
+
+    # Optional
+    ps_mem
+
   ];
 }
