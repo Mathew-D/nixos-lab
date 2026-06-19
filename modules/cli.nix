@@ -13,9 +13,13 @@
     # Modern CLI tools
     fd
     ripgrep
+    bat
+    eza
+    fzf
 
-    # Optional
+
+    # Utilities
     ps_mem
-
+    tree
   ];
 }
