@@ -26,7 +26,8 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
+  networking.firewall.enable = true;
+  
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
 
