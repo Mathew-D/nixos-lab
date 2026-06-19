@@ -21,5 +21,8 @@
     # Utilities
     ps_mem
     tree
+    wl-clipboard
+    wayland-utils
+
   ];
 }
