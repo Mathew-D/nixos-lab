@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./mdusome.nix
+  ];
+}
