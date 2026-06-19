@@ -8,6 +8,7 @@
     ./modules/cli.nix
     ./modules/apps.nix
     ./modules/shell.nix
+    ./modules/env.nix
   ];
 
 # Turn flakes on
