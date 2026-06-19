@@ -3,9 +3,12 @@
 {
   environment.systemPackages = with pkgs; [ 
     kdePackages.kate
-    vscode
-   # windsurf
+    kdePackages.konsole
+    kdePackages.dolphin
+    kdePackages.gwenview
+    kdePackages.kcalc
     
+    vscode  
     libreoffice-fresh
     masterpdfeditor4
 
