@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [ 
     kdePackages.kate
     vscode
-    //windsurf
+   # windsurf
     processing
     libreoffice-fresh
     masterpdfeditor4
