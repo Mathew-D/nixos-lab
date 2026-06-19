@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [ 
     kdePackages.kate
-vscode
+    vscode
   ];
+  programs.firefox.enable = true;
 }
