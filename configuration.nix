@@ -7,6 +7,7 @@
     ./users
     ./modules/cli.nix
     ./modules/gui.nix
+    ./modules/shell.nix
   ];
 
 # Turn flakes on
@@ -28,14 +29,6 @@
 
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Firefox (system-wide)
-  programs.firefox.enable = true;
-
-  # System-wide packages (shared by all users)
-  environment.systemPackages = with pkgs; [
-    kdePackages.kate
-  ];
 
   nixpkgs.config.allowUnfree = true;
 
