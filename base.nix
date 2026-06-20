@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
     ./desktop/plasma.nix
     ./users
     ./modules/cli.nix
@@ -25,7 +24,7 @@
   # Latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos";
+
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
   
