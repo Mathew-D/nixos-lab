@@ -26,6 +26,13 @@
 
     #Dev Tools
     jdk21
-
+    
+    python314
+    python314Packages.pyside6
+    qt6.qttools
+    
+    rustc
+    cargo
+    rustup
   ];
 }
