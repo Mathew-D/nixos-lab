@@ -5,17 +5,22 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
   };
 
-  outputs = { self, nixpkgs, ... }:
+ outputs = { nixpkgs, ... }:
   let
     system = "x86_64-linux";
-  in
-  {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
 
-      modules = [
-        ./configuration.nix
-      ];
+    mkHost = name: nixpkgs.lib.nixosSystem {
+      inherit system;
+      modules = [ ./hosts/${name}.nix ];
     };
+
+    hosts = [ "lab01" "lab02" ];
+  in {
+    nixosConfigurations = builtins.listToAttrs (
+      map (name: {
+        name = name;
+        value = mkHost name;
+      }) hosts
+    );
   };
 }
