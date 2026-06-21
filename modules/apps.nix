@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [ 
@@ -8,9 +8,11 @@
     kdePackages.gwenview
     kdePackages.kcalc
     
+    foot
     vscode  
     libreoffice-fresh
     masterpdfeditor4
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 
    (writeShellScriptBin "processing" ''
     export _JAVA_OPTIONS="--add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED --add-opens=java.desktop/java.awt=ALL-UNNAMED"

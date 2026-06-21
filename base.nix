@@ -1,13 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
+    ./display/greetd.nix
+    ./desktop/niri.nix
     ./desktop/plasma.nix
     ./users
     ./modules/cli.nix
     ./modules/apps.nix
     ./modules/shell.nix
     ./modules/env.nix
+    ./modules/skel.nix
   ];
 
 # Turn flakes on
@@ -32,12 +35,17 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   # Fonts
-  fonts.fonts = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-  ];
+fonts.packages = with pkgs; [
+  noto-fonts
+  noto-fonts-cjk-sans
+  noto-fonts-color-emoji
+  nerd-fonts.roboto-mono
+];  
 
   # Clean up old generations
   nix.gc = {
@@ -48,6 +56,22 @@
 
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
+
+  
+  # Printing
+  services.printing.enable = true;
+
+  # Audio (PipeWire)
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+  
 
   nixpkgs.config.allowUnfree = true;
 

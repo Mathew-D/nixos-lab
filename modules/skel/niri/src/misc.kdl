@@ -1,0 +1,18 @@
+environment {
+  XDG_SESSION_TYPE "wayland"
+  XDG_CURRENT_DESKTOP "niri"
+  XDG_SESSION_CLASS "user"
+  ELECTRON_OZONE_PLATFORM_HINT "wayland"
+}
+
+hotkey-overlay {
+  skip-at-startup
+}
+
+debug {
+  honor-xdg-activation-with-invalid-serial
+}
+
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/nirishot-%Y-%m-%d_%H-%M-%S.png"
+

@@ -1,0 +1,62 @@
+// --------------------------------------------------------
+// LAYOUT
+// --------------------------------------------------------
+layout {
+  gaps 16
+
+  center-focused-column "never"
+  always-center-single-column
+
+  //background-color "#16161d"
+  background-color "transparent"
+
+  insert-hint {
+    color "#31748f"
+  }
+
+  default-column-width { proportion 1.0; }
+
+  preset-column-widths {
+    proportion 0.5
+    proportion 0.66667
+    proportion 1.0
+  }
+
+  preset-window-heights {
+    proportion 0.5
+    proportion 0.66667
+    proportion 1.0
+  }
+  
+  border {
+    off
+  }
+
+  focus-ring {
+    on
+    width 1.5
+    active-color "#9ccfd8"
+    inactive-color "#524f67"
+    urgent-color "#eb6f92"
+    //active-gradient from="#31748f" to="#9ccfd8" angle=0 relative-to="workspace-view"
+  }
+
+  struts {
+  }
+
+  shadow {
+    on
+    softness 20
+    spread 4
+    offset x=0 y=10
+    draw-behind-window false
+    color "#00000088"
+  }
+}
+
+overview {
+  backdrop-color "#524f67"
+  // workspace-shadow {
+  //     off
+  // }
+}

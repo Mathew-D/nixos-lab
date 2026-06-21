@@ -1,0 +1,34 @@
+
+gestures {
+  hot-corners {
+    off
+  }
+}
+
+input {
+  //focus-follows-mouse
+  //warp-mouse-to-focus
+  focus-follows-mouse max-scroll-amount="0%"
+  //workspace-auto-back-and-forth
+
+  keyboard {
+    //repeat-delay 300
+    //repeat-rate 50
+    numlock
+    xkb {
+      layout "us"
+      //layout "latam, us(altgr-intl), us(colemak)"
+    }
+  }
+
+  touchpad {
+  //  tap
+  //  natural-scroll
+  }
+
+  mouse {
+  }
+
+  trackpoint {
+  }
+}

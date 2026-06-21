@@ -1,0 +1,149 @@
+// --------------------------------------------------------
+// KEYBINDS
+// --------------------------------------------------------
+binds {
+    // Brightness
+    //XF86MonBrightnessUp       allow-when-locked=true { spawn "~/.local/bin/backlight" "--inc"; }
+    //XF86MonBrightnessDown     allow-when-locked=true { spawn "~/.local/bin/backlight" "--dec"; }
+    //XF86MonBrightnessUp       allow-when-locked=true { spawn-sh "noctalia msg brightness-up 1%"; }
+    //SSSSXF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia msg brightness-down 1%"; }
+    XF86MonBrightnessUp         allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown       allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+    // Audio & Media
+    XF86AudioRaiseVolume        allow-when-locked=true { spawn-sh "noctalia msg volume-up 1"; }
+    XF86AudioLowerVolume        allow-when-locked=true { spawn-sh "noctalia msg volume-down 1"; }
+    XF86AudioMute               allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    XF86AudioMicMute            allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
+ //   XF86AudioRaiseVolume        allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+ //   XF86AudioLowerVolume        allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+ //   XF86AudioMute               allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+ //   XF86AudioMicMute            allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioMedia              allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioPlay               allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioPrev               allow-when-locked=true { spawn "playerctl" "previous"; }
+    XF86AudioNext               allow-when-locked=true { spawn "playerctl" "next"; }
+
+    // Basic Apps
+    Mod+T hotkey-overlay-title="Open Terminal" { spawn "foot"; }
+    Mod+Return hotkey-overlay-title="Open Terminal" { spawn "foot"; }
+    Mod+E         { spawn "dolphin"; }
+    Mod+C         { spawn "code"; }
+    Mod+B         { spawn-sh "firefox"; }
+
+    Print { spawn-sh "noctalia msg screenshot-region"; }
+    Ctrl+Print { spawn-sh "noctalia msg screenshot-fullscreen"; }
+
+//    Print { screenshot; }
+//    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    // Noctalia - Launcher, Utils, etc..
+    Mod+Escape  { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+W       { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+D       { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+Z       { spawn-sh "noctalia msg panel-toggle launcher /emo"; }
+    Mod+V       { spawn-sh "noctalia msg panel-toggle clipboard"; }
+    Mod+X       { spawn-sh "noctalia msg bar-toggle"; }
+    Mod+Shift+W { spawn-sh "noctalia msg desktop-widgets-toggle-edit"; }
+    Mod+Shift+T { spawn-sh "noctalia msg panel-toggle test"; }
+
+    //Mod+Shift+X   { spawn-sh "~/.local/bin/noctalia-shell-restart"; }
+    //Mod+P         { spawn-sh "~/.local/bin/grimshot"; }
+    //Mod+Shift+P   { spawn-sh "~/.local/bin/grimshot screen"; }
+    //Mod+SemiColon { spawn-sh "~/.local/bin/color-picker"; }
+
+    Mod+Shift+D   { debug-toggle-damage; }
+
+    Mod+Shift+E               { quit; }
+    Mod+Q repeat=false        { close-window; }
+    Mod+Space                     { toggle-window-floating; }
+    Mod+Slash                 { consume-or-expel-window-left; }
+    //Mod+Return              { fullscreen-window; }
+    Mod+MouseMiddle           { toggle-overview; }
+    Mod+O	              { toggle-overview; }
+
+    // Set Sizes
+    Mod+R     { switch-preset-column-width; }
+    Mod+A     { set-window-width "33%"; }
+    Mod+S     { set-window-width "50%"; }
+//    Mod+D     { set-window-width "66%"; }
+    Mod+F     { set-window-width "100%"; }
+
+    Mod+Ctrl+A    { set-window-height "33"; }
+    Mod+Ctrl+S    { set-window-height "50%"; }
+//    Mod+Ctrl+D    { set-window-height "66%"; }
+    Mod+Ctrl+F    { set-window-height "100%"; }
+
+    // Focus & move
+    Mod+Left            { focus-column-left; }
+    Mod+Down            { focus-window-down; }
+    Mod+Up              { focus-window-up; }
+    Mod+Right           { focus-column-right; }
+    Mod+H               { focus-column-left; }
+    Mod+J               { focus-window-down; }
+    Mod+K               { focus-window-up; }
+    Mod+L               { focus-column-right; }
+    Mod+Shift+Left      { move-column-left; }
+    Mod+Shift+Down      { move-window-down; }
+    Mod+Shift+Up        { move-window-up; }
+    Mod+Shift+Right     { move-column-right; }
+
+    Mod+U               { focus-workspace-down; }
+    Mod+I               { focus-workspace-up; }
+    //Mod+MouseBack     { focus-workspace-down; }
+    //Mod+MouseForward  { focus-workspace-up; }
+    //Mod+WheelScrollDown       { focus-column-right; }
+    //Mod+WheelScrollUp         { focus-column-left; }
+    //Mod+Shift+WheelScrollDown { move-column-right; }
+    //Mod+Shift+WheelScrollUp   { move-column-left; }
+
+    // === Monitor Navigation ===
+    Mod+Ctrl+Left  { focus-monitor-left; }
+    Mod+Ctrl+Down  { focus-monitor-down; }
+    Mod+Ctrl+Up    { focus-monitor-up; }
+    Mod+Ctrl+Right { focus-monitor-right; }
+    Mod+Ctrl+H     { focus-monitor-left; }
+    Mod+Ctrl+J     { focus-monitor-down; }
+    Mod+Ctrl+K     { focus-monitor-up; }
+    Mod+Ctrl+L     { focus-monitor-right; }
+
+    // === Numbered Workspaces ===
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    // === Move to Numbered Workspaces ===
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+
+      // === Numbered Workspaces (Alternative) ===
+    //Mod+1 { focus-workspace "1"; }
+    //Mod+2 { focus-workspace "2"; }
+    //Mod+3 { focus-workspace "3"; }
+    //Mod+4 { focus-workspace "4"; }
+    //Mod+5 { focus-workspace 5; } // On purpose so we can access the extra workspace but not name it.
+    //Mod+6 { focus-workspace "6"; }
+    //Mod+7 { focus-workspace "7"; }
+
+    //Mod+Shift+1 { move-column-to-workspace "1"; }
+    //Mod+Shift+2 { move-column-to-workspace "2"; }
+    //Mod+Shift+3 { move-column-to-workspace "3"; }
+    //Mod+Shift+4 { move-column-to-workspace "4"; }
+    //Mod+Shift+5 { move-column-to-workspace 5; }
+    //Mod+Shift+6 { move-column-to-workspace "6"; }
+    //Mod+Shift+7 { move-column-to-workspace "7"; }
+}

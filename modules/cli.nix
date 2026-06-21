@@ -23,6 +23,8 @@
     tree
     wl-clipboard
     wayland-utils
+    brightnessctl
+    xwayland-satellite # xwayland support
 
     #Dev Tools
     jdk21
