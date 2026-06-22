@@ -41,6 +41,7 @@
     ]))
 
     qt6.qttools
+    qt6.base
     
     libX11
     libXcursor
