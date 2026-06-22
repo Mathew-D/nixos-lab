@@ -12,7 +12,7 @@
     EDITOR="nano";
     VISUAL="nano";
     TERMINAL="foot";
-    JAVA_HOME = "/run/current-system/sw/lib/openjdk";
+    #JAVA_HOME = "/run/current-system/sw/lib/openjdk";
 
 LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
     libX11

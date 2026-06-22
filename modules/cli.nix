@@ -29,6 +29,9 @@
     #Dev Tools
     jdk21
     
+
+
+
     
     (python314.withPackages (ps: with ps; [
       pyside6
@@ -47,4 +50,7 @@
     cargo
     rustup
   ];
+
+
+  
 }

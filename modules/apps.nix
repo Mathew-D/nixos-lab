@@ -11,7 +11,6 @@
     google-chrome
     nwg-look
     foot
-    vscode  
     libreoffice-fresh
     masterpdfeditor4
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -23,4 +22,20 @@
 
   ];
   programs.firefox.enable = true;
+
+  programs.vscode = {
+  enable = true;
+
+  userSettings = {
+    "java.jdt.ls.java.home" = "${pkgs.jdk21}/lib/openjdk";
+    "java.configuration.runtimes" = [
+      {
+        name = "JavaSE-21";
+        path = "${pkgs.jdk21}/lib/openjdk";
+        default = true;
+      }
+    ];
+    "java.jdt.ls.vmargs" = "-Djava.home=${pkgs.jdk21}/lib/openjdk";
+  };
+};
 }
