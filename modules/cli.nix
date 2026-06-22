@@ -33,6 +33,7 @@
     python314Packages.pyside6
     qt6.qttools
     
+    gcc
     rustc
     cargo
     rustup
