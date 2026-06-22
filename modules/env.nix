@@ -7,7 +7,7 @@
 
     # future variables
     BROWSER = "firefox";
-    QT_QPA_PLATFORMTHEME="gtk3";
+    #QT_QPA_PLATFORMTHEME="gtk3";
     SYSTEMD_EDITOR="nano";
     EDITOR="nano";
     VISUAL="nano";
