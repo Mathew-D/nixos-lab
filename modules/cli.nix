@@ -30,6 +30,9 @@
     jdk25
     openjfx
 
+    glib
+    gtk3
+
 
 
     

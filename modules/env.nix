@@ -25,6 +25,8 @@ LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
     mesa
     libGL
     libXxf86vm
+    glib
+    gtk3
   ];
 
 
