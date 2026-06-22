@@ -13,7 +13,7 @@ services.gnome.gnome-keyring.enable = true;
     ];
 
     config = {
-        common.default = [ "gtk" "kde" ];
+        common.default = [ "kde" "gtk" ];
     };
 
 };
