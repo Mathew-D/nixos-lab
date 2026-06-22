@@ -33,6 +33,7 @@
     python314Packages.pyside6
     qt6.qttools
     
+    libx11
     gcc
     rustc
     cargo
