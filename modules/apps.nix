@@ -8,6 +8,8 @@
     kdePackages.gwenview
     kdePackages.kcalc
     
+    google-chrome
+    nwg-look
     foot
     vscode  
     libreoffice-fresh

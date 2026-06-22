@@ -6,7 +6,11 @@
   #    "--add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED --add-opens=java.desktop/java.awt=ALL-UNNAMED";
 
     # future variables
-    EDITOR = "nano";
     BROWSER = "firefox";
+    QT_QPA_PLATFORMTHEME="gtk3";
+    SYSTEMD_EDITOR="nano";
+    EDITOR="nano";
+    VISUAL="nano";
+    TERMINAL="foot";
   };
 }
