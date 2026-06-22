@@ -29,7 +29,7 @@
     #Dev Tools
     jdk25
     openjfx
-
+    libXtst
     glib
     gtk3
 

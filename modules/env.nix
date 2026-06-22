@@ -27,6 +27,7 @@ LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
     libXxf86vm
     glib
     gtk3
+    libXtst
   ];
 
 
