@@ -10,11 +10,10 @@ services.gnome.gnome-keyring.enable = true;
     extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
         kdePackages.xdg-desktop-portal-kde
+        xdg-desktop-portal-wlr
     ];
 
-    config = {
-        common.default = [ "kde" "gtk" ];
-    };
+    config.common.default = "gtk";
 
 };
 }
