@@ -19,5 +19,8 @@
     "skel/.config/gtk-3.0/gtk.css".text = builtins.readFile ./skel/gtk-3.0/gtk.css;
     "skel/.config/gtk-3.0/noctalia.css".text = builtins.readFile ./skel/gtk-3.0/noctalia.css;
     "skel/.config/gtk-3.0/settings.ini".text = builtins.readFile ./skel/gtk-3.0/settings.ini;
+
+    "xdg/Code/User/settings.json".source = ./vscode/settings.json;
+
   };
 }
