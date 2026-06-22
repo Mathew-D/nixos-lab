@@ -12,6 +12,7 @@
     nwg-look
     foot
     vscode
+    vscode-extensions.redhat.java
     libreoffice-fresh
     masterpdfeditor4
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -23,5 +24,6 @@
 
   ];
   programs.firefox.enable = true;
+
 
 }
