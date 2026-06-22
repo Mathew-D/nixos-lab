@@ -11,6 +11,7 @@
     ./modules/shell.nix
     ./modules/env.nix
     ./modules/skel.nix
+    ./modules/theme.nix
   ];
 
 # Turn flakes on

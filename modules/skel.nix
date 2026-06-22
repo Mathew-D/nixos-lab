@@ -15,5 +15,9 @@
     "skel/.config/niri/src/rules.kdl".text = builtins.readFile ./skel/niri/src/rules.kdl;
     "skel/.config/niri/src/spawn.kdl".text = builtins.readFile ./skel/niri/src/spawn.kdl;
     "skel/.config/noctalia/noctalia-config.toml".text = builtins.readFile ./skel/noctalia/noctalia-config.toml;
+    "skel/.config/gtk-3.0/bookmarks".text = builtins.readFile ./skel/gtk-3.0/bookmarks;
+    "skel/.config/gtk-3.0/gtk.css".text = builtins.readFile ./skel/gtk-3.0/gtk.css;
+    "skel/.config/gtk-3.0/noctalia.css".text = builtins.readFile ./skel/gtk-3.0/noctalia.css;
+    "skel/.config/gtk-3.0/settings.ini".text = builtins.readFile ./skel/gtk-3.0/settings.ini;
   };
 }
