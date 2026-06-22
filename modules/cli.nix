@@ -17,10 +17,10 @@
     eza
     fzf
 
-
     # Utilities
     ps_mem
     tree
+    btop
     wl-clipboard
     wayland-utils
     brightnessctl
@@ -29,8 +29,11 @@
     #Dev Tools
     jdk21
     
-    python314
-    python314Packages.pyside6
+    
+    (python314.withPackages (ps: with ps; [
+      pyside6
+    ]))
+
     qt6.qttools
     
     libX11
