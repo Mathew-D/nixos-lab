@@ -27,7 +27,7 @@
     xwayland-satellite # xwayland support
 
     #Dev Tools
-    jdk21
+    jdk25
     
 
 

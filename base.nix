@@ -73,7 +73,7 @@ fonts.packages = with pkgs; [
     pulse.enable = true;
   };
   
-  #programs.nix-ld.enable = true;
+  programs.nix-ld.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
