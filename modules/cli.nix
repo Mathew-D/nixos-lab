@@ -28,7 +28,7 @@
 
     #Dev Tools
     jdk25
-    
+    openjfx
 
 
 
