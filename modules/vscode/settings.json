@@ -1,5 +1,8 @@
 {
+  "java.jdt.ls.useJdkHome": true,
+
   "java.jdt.ls.java.home": "/run/current-system/sw/lib/openjdk",
+
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-21",
@@ -7,5 +10,6 @@
       "default": true
     }
   ],
+
   "java.jdt.ls.vmargs": "-Djava.home=/run/current-system/sw/lib/openjdk"
 }
