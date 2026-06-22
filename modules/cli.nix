@@ -40,8 +40,9 @@
       pyside6
     ]))
 
-    qt6.qttools
-    qt6.base
+    qt6Packages.qttools
+    #qt6.qttools
+    #qt6.base
     
     libX11
     libXcursor
