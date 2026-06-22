@@ -45,6 +45,7 @@
     libXrandr
     libXinerama
     libxkbcommon
+    libXxf86vm
     gcc
     rustc
     cargo

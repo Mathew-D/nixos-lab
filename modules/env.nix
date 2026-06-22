@@ -24,6 +24,7 @@ LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
     libXext
     mesa
     libGL
+    libXxf86vm
   ];
 
 
