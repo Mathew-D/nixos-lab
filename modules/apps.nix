@@ -8,7 +8,7 @@
     kdePackages.gwenview
     kdePackages.kcalc
     
-    google-chrome
+    #google-chrome
     nwg-look
     foot
     vscode
