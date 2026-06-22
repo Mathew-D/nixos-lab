@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   environment.variables = {
@@ -12,5 +12,21 @@
     EDITOR="nano";
     VISUAL="nano";
     TERMINAL="foot";
+
+
+LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
+    libX11
+    libXcursor
+    libXi
+    libXrandr
+    libXinerama
+    libxkbcommon
+    libXext
+    mesa
+    libGL
+  ];
+
+
+
   };
 }
