@@ -58,7 +58,10 @@ fonts.packages = with pkgs; [
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  
+  #Hardware
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true; 
+
   # Printing
   services.printing.enable = true;
 

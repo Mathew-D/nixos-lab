@@ -34,7 +34,10 @@
     gtk3
 
 
-
+    mesa
+    libglvnd
+    vulkan-loader
+    vulkan-tools
     
     (python314.withPackages (ps: with ps; [
       pyside6
