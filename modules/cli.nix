@@ -33,7 +33,12 @@
     python314Packages.pyside6
     qt6.qttools
     
-    libx11
+    libX11
+    libXcursor
+    libXi
+    libXrandr
+    libXinerama
+    libxkbcommon
     gcc
     rustc
     cargo
