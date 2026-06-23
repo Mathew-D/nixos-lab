@@ -7,8 +7,8 @@
     kdePackages.dolphin
     kdePackages.gwenview
     kdePackages.kcalc
-    
-    #google-chrome
+    nautilus
+    google-chrome
     nwg-look
     foot
     vscode

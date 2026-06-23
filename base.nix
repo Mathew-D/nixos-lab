@@ -28,9 +28,14 @@
   # Latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-
+  #Networking
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
+  services.gvfs = {
+  enable = true;
+  package = pkgs.gnome.gvfs;
+};
+
 
   # Bluetooth
   hardware.bluetooth.enable = true;

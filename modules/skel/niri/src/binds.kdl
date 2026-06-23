@@ -27,7 +27,7 @@ binds {
     // Basic Apps
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "foot"; }
     Mod+Return hotkey-overlay-title="Open Terminal" { spawn "foot"; }
-    Mod+E         { spawn "dolphin"; }
+    Mod+E         { spawn "nautilus"; }
     Mod+C         { spawn "code"; }
     Mod+B         { spawn-sh "firefox"; }
 
