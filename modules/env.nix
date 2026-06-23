@@ -15,19 +15,23 @@
     #JAVA_HOME = "/run/current-system/sw/lib/openjdk";
 
 LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
+    #Rust 
     libX11
     libXcursor
     libXi
-    libXrandr
-    libXinerama
     libxkbcommon
-    libXext
-    mesa
     libGL
-    libXxf86vm
-    glib
-    gtk3
-    libXtst
+    
+ #   libXrandr
+ #   libXinerama
+  
+ #   libXext
+ #   mesa
+    
+ #   libXxf86vm
+ #   glib
+  #  gtk3
+  #  libXtst
   ];
 
 
