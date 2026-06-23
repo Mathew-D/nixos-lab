@@ -17,21 +17,24 @@
 LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
     #Rust 
     libX11
-    libXcursor
     libXi
     libxkbcommon
     libGL
     
- #   libXrandr
- #   libXinerama
-  
- #   libXext
- #   mesa
-    
- #   libXxf86vm
- #   glib
-  #  gtk3
-  #  libXtst
+
+    #Java
+    libXxf86vm
+    glib
+    libXtst
+
+    #Not needed
+    #libXcursor
+    #libXrandr
+    #libXinerama
+    #gtk3
+    #libXext
+    #mesa
+ 
   ];
 
 

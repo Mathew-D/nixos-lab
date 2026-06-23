@@ -12,7 +12,6 @@
     ./modules/env.nix
     ./modules/skel.nix
     ./modules/theme.nix
-    ./modules/java-fix.nix
   ];
 
 # Turn flakes on

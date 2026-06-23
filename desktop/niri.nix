@@ -13,7 +13,7 @@ services.gnome.gnome-keyring.enable = true;
         xdg-desktop-portal-wlr
     ];
 
-    config.common.default = "gtk";
+    config.common.default = "kde";
 
 };
 }
