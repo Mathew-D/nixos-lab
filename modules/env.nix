@@ -13,7 +13,7 @@
     VISUAL="nano";
     TERMINAL="foot";
     #JAVA_HOME = "/run/current-system/sw/lib/openjdk";
-
+/* #OLD Work seems not be needed
 LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
     #Rust 
     libX11
@@ -36,7 +36,7 @@ LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
     #mesa
  
   ];
-
+*/
 
 
   };
