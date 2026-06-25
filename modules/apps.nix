@@ -8,7 +8,7 @@
     kdePackages.gwenview
     kdePackages.kcalc
     nautilus
-    google-chrome
+  
     nwg-look
     foot
     libreoffice-fresh
@@ -22,14 +22,15 @@
     libXi
     libxkbcommon
     libGL
-
     #Java
     libXxf86vm
     glib
     libXtst
     ]))
 
-
+(pkgs.google-chrome.override {
+    commandLineArgs = [ "--password-store=basic" ];
+  })
 
 
    (writeShellScriptBin "processing" ''
