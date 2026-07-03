@@ -25,9 +25,6 @@ programs.noctalia-greeter = {
       theme = "Adwaita";
       size = 24;
     };
-    keyboard = {
-      layout = "us";
-    };
   };
 };
 }
