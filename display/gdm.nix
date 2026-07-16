@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   services.displayManager.gdm.enable = true;
   programs.dconf.enable = true;
@@ -13,7 +13,7 @@
     ];
   };
 
-  programs.dconf.profiles.gdm.databases = [
+  programs.dconf.profiles.gdm.databases = lib.mkBefore [
     {
       settings = {
         "org/gnome/desktop/background" = {
@@ -27,6 +27,14 @@
           picture-options = "zoom";
         };
       };
+      locks = [
+        "/org/gnome/desktop/background/picture-uri"
+        "/org/gnome/desktop/background/picture-uri-dark"
+        "/org/gnome/desktop/background/picture-options"
+        "/org/gnome/desktop/screensaver/picture-uri"
+        "/org/gnome/desktop/screensaver/picture-uri-dark"
+        "/org/gnome/desktop/screensaver/picture-options"
+      ];
     }
   ];
 }
