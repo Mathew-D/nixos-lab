@@ -12,6 +12,9 @@
     killall
     procps
 
+    #login to freeipa
+    freeipa
+    
     # Modern CLI tools
     fd
     ripgrep
