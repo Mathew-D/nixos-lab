@@ -39,7 +39,13 @@
   #Networking
   networking.networkmanager.enable = true;
   networking.networkmanager.dns = "none";
+  networking.networkmanager.settings.main = {
+    "rc-manager" = "unmanaged";
+  };
   networking.nameservers = [ "192.168.2.92" ];
+  environment.etc."resolv.conf".text = ''
+    nameserver 192.168.2.92
+  '';
   networking.firewall.enable = true;
   services.gvfs = {
   enable = true;
