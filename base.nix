@@ -66,6 +66,7 @@
   };
 
 
+services.sssd.enable=true;
 
 services.sssd.settings = {
   "domain/bhs.local" = {
