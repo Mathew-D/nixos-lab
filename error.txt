@@ -1,1 +1,7 @@
-strace -f -e trace=openat,getdents,getpwuid,getpwnam getent passwd 2>&1 | tail -n 50
+sudo strace -f -e trace=connect,openat,read,write,recvmsg,sendmsg,getrandom,clock_gettime \
+  getent passwd |& tail -n 80
+
+  sudo ltrace getent passwd 2>&1 | tail -n 80
+
+  sudo strace -f -e trace=getdents,getdents64,getpwnam,getpwuid,getpwent \
+  getent passwd
