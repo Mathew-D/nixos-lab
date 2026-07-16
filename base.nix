@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./display/greetd.nix
+   # ./display/greetd.nix
+   ./display/sddm.nix
     ./desktop/niri.nix
     ./desktop/plasma.nix
     ./users
@@ -66,6 +67,17 @@
   };
 
 
+/*
+services.sssd.settings = {
+  "domain/bhs.local" = {
+    enumerate = true;
+    cache_credentials = true;
+    fallback_homedir = "/home/%u";
+    default_shell = "/run/current-system/sw/bin/bash";
+  };
+};
+*/
+services.accounts-daemon.enable = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;
