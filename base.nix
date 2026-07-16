@@ -38,6 +38,7 @@
 
   #Networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "none";
   networking.nameservers = [ "192.168.2.92" ];
   networking.firewall.enable = true;
   services.gvfs = {
