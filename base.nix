@@ -61,7 +61,7 @@
     basedn = "dc=bhs,dc=local";
     certificate = pkgs.fetchurl {
       url = "http://ipa.bhs.local/ipa/config/ca.crt";
-      hash = pkgs.lib.fakeHash;
+      hash = sha256-SbbcHlTiJPk8+x6kjIBOWsWMaTBk9dVsCjRgyw0LIdE=;
     };
   };
 
