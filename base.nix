@@ -42,6 +42,7 @@
   networking.networkmanager.settings.main = {
     "rc-manager" = "unmanaged";
   };
+  networking.resolvconf.enable = false;
   networking.nameservers = [ "192.168.2.92" ];
   environment.etc."resolv.conf".text = ''
     nameserver 192.168.2.92
