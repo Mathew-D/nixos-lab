@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   services.displayManager.gdm.enable = true;
+  programs.dconf.enable = true;
 
   security.pam.services.gdm-password.rules.session.mkHome = {
     order = 120;
@@ -12,14 +13,21 @@
     ];
   };
 
-  environment.etc."gdm/background.png".source = ./gdm-background.png;
-
-  environment.etc."gdm/custom.css".text = ''
-    #lockDialogGroup {
-      background: url(file:///etc/gdm/background.png);
-      background-size: cover;
-      background-position: center;
+  programs.dconf.profiles.gdm.databases = [
+    {
+      settings = {
+        "org/gnome/desktop/background" = {
+          picture-uri = "file://${./gdm-background.png}";
+          picture-uri-dark = "file://${./gdm-background.png}";
+          picture-options = "zoom";
+        };
+        "org/gnome/desktop/screensaver" = {
+          picture-uri = "file://${./gdm-background.png}";
+          picture-uri-dark = "file://${./gdm-background.png}";
+          picture-options = "zoom";
+        };
+      };
     }
-  '';
+  ];
 }
 
