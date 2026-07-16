@@ -58,6 +58,11 @@
     domain = "bhs.local";
     realm = "BHS.LOCAL";
     server = "ipa.bhs.local";
+    basedn = "dc=bhs,dc=local";
+    certificate = pkgs.fetchurl {
+      url = "http://ipa.bhs.local/ipa/config/ca.crt";
+      hash = pkgs.lib.fakeHash;
+    };
   };
 
 
