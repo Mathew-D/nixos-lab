@@ -14,18 +14,20 @@
     ./modules/theme.nix
   ];
 
-# Turn flakes on
- nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
- substituters = [
+# Turn flakes on and trust Noctalia cache
+ nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = [
       "https://cache.nixos.org/"
       "https://noctalia.cachix.org"
     ];
     trusted-public-keys = [
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
+  };
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
