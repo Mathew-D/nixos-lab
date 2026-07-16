@@ -9,6 +9,8 @@
     file
     unzip
     zip
+    killall
+    procps
 
     # Modern CLI tools
     fd
@@ -25,6 +27,10 @@
     wayland-utils
     brightnessctl
     xwayland-satellite # xwayland support
+    playerctl
+    wireguard-tools
+    pciutils
+    gpu-screen-recorder
 
     #Dev Tools
     jdk25
@@ -38,7 +44,8 @@
     libglvnd
     vulkan-loader
     vulkan-tools
-    
+    mesa-demos
+
     (python314.withPackages (ps: with ps; [
       pyside6
     ]))
@@ -56,8 +63,6 @@
     libXxf86vm
     gcc
     rustc
-    cargo
-    rustup
   ];
 
 

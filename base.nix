@@ -19,7 +19,13 @@
     "nix-command"
     "flakes"
   ];
-
+ substituters = [
+      "https://cache.nixos.org/"
+      "https://noctalia.cachix.org"
+    ];
+    trusted-public-keys = [
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -30,6 +36,7 @@
 
   #Networking
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "192.168.2.92" ];
   networking.firewall.enable = true;
   services.gvfs = {
   enable = true;
