@@ -12,5 +12,15 @@ security.pam.services.gdm-password.rules.session.mkHome = {
     "umask=0077"
   ];
 };
+
+programs.dconf.profiles.gdm.databases = [
+  {
+    settings = {
+      "org/gnome/login-screen" = {
+        disable-user-list = true;
+      };
+    };
+  }
+];
 }
 
