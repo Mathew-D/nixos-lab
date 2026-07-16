@@ -1,0 +1,33 @@
+Jul 16 13:14:18 lab01 systemd[1]: Starting ipa-activation.service...
+Jul 16 13:14:18 lab01 ipa-activation-start[7381]:     In order to complete FreeIPA integration, please join the domain by completing the following steps:
+Jul 16 13:14:18 lab01 ipa-activation-start[7381]:     1. Authenticate as an IPA user authorized to join new hosts, e.g. kinit admin@BHS.LOCAL
+Jul 16 13:14:18 lab01 ipa-activation-start[7381]:     2. Join the domain and obtain the keytab file: ipa-join
+Jul 16 13:14:18 lab01 ipa-activation-start[7381]:     3. Install the keytab file: sudo install -m 600 krb5.keytab /etc/
+Jul 16 13:14:18 lab01 ipa-activation-start[7381]:     4. Restart sssd systemd service: sudo systemctl restart sssd
+Jul 16 13:14:18 lab01 systemd[1]: ipa-activation.service: Main process exited, code=exited, status=1/FAILURE
+Jul 16 13:14:18 lab01 systemd[1]: ipa-activation.service: Failed with result 'exit-code'.
+Jul 16 13:14:18 lab01 systemd[1]: Failed to start ipa-activation.service.
+
+× sssd.service - System Security Services Daemon
+     Loaded: loaded (/etc/systemd/system/sssd.service; enabled; preset: ignored)
+     Active: failed (Result: exit-code) since Thu 2026-07-16 13:14:25 EDT; 703ms ago
+ Invocation: bd9784137ef74329b99a13a4154ce01e
+    Process: 7478 ExecStartPre=/nix/store/j5a05nmz7c7fa6fwjcw5wwiw3ayvqggy-unit-script-sssd-pre-start/bin/sssd-pre-start (code=exited, status=0/SUCCESS)
+    Process: 7498 ExecStart=/nix/store/gl0darffh1jvgy4kicwds88rfj2vcg35-sssd-2.13.0/bin/sssd -i -c /var/lib/sssd/sssd.conf (code=exited, status=1/FAILURE)
+   Main PID: 7498 (code=exited, status=1/FAILURE)
+         IP: 0B in, 0B out
+         IO: 8.4M read, 1.1M written
+   Mem peak: 15.9M
+        CPU: 114ms
+
+Jul 16 13:14:25 lab01 ldap_child[10940]: Failed to read keytab [FILE:/etc/krb5.keytab]: No suitable principal found in keytab
+Jul 16 13:14:25 lab01 sssd[7498]: (2026-07-16 13:14:25): [sssd] [svc_child_info] (0x0040): Child [10930] ('bhs.local':'%BE_bhs.local') exited with code [3]
+Jul 16 13:14:25 lab01 sssd[7498]: (2026-07-16 13:14:25): [sssd] [monitor_restart_service] (0x0010): Process [bhs.local], definitely stopped!
+Jul 16 13:14:25 lab01 sssd[7498]: (2026-07-16 13:14:25): [sssd] [monitor_quit] (0x3f7c0): Returned with: 1
+Jul 16 13:14:25 lab01 sssd[7498]: (2026-07-16 13:14:25): [sssd] [monitor_cleanup] (0x0010): Error removing pidfile! (2 [No such file or directory])
+Jul 16 13:14:25 lab01 sssd[7498]: Exiting the SSSD. Could not restart critical service [bhs.local].
+Jul 16 13:14:25 lab01 systemd[1]: sssd.service: Main process exited, code=exited, status=1/FAILURE
+Jul 16 13:14:25 lab01 systemd[1]: sssd.service: Failed with result 'exit-code'.
+Jul 16 13:14:25 lab01 systemd[1]: Failed to start System Security Services Daemon.
+Jul 16 13:14:25 lab01 systemd[1]: sssd.service: Consumed 114ms CPU time over 6.651s wall clock time, 15.9M memory peak, 8.4M read from disk, 1.1M written to disk.
+Command 'systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER -E NIXOS_NO_CHECK --collect --no-ask-password --pipe --quiet --service-type=exec --unit=nixos-rebuild-switch-to-configuration /nix/store/avpjnyz8vawh00k1s23vdck43hwday48-nixos-system-lab01-26.05.20260716.4382ed2/bin/switch-to-configuration switch' returned non-zero exit status 4.
