@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   services.displayManager.gdm.enable = true;
-  services.displayManager.gdm.wayland = true;
+ 
   
  security.pam.services.gdm-password.rules.mkHome = {
   order = 120;
