@@ -4,5 +4,6 @@
     /etc/nixos/hardware-configuration.nix
   ];
 
-  networking.hostName = "lab01.bhs.local";
+  networking.hostName = "lab01";
+  networking.domain = "bhs.local";
 }
