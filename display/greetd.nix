@@ -6,10 +6,10 @@
 
   users.groups.greeter = {};
   users.users.greeter = {
-    isSystemUser = true;
-    group = "greeter";
-    home = "/var/lib/noctalia-greeter";
-    createHome = true;
+        extraGroups = [
+       "greeter" 
+       "video"
+       ];
   };
 
   services.greetd.settings.default_session.user = "greeter";
