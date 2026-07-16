@@ -1,1 +1,4 @@
-grep -E '^(passwd|group):' /etc/nsswitch.conf
+dusome@lab01 ~> grep -E '^(passwd|group):' /etc/nsswitch.conf
+passwd:    files sss systemd
+group:     files sss [success=merge] systemd
+mdusome@lab01 ~> 
