@@ -66,7 +66,7 @@
   };
 
 
-/*
+
 services.sssd.settings = {
   "domain/bhs.local" = {
     enumerate = true;
@@ -75,7 +75,7 @@ services.sssd.settings = {
     default_shell = "/run/current-system/sw/bin/bash";
   };
 };
-*/
+
 services.accounts-daemon.enable = true;
 
   # Bluetooth
