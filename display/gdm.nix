@@ -12,20 +12,21 @@ security.pam.services.gdm-password.rules.session.mkHome = {
     "umask=0077"
   ];
 };
-
+/*
 programs.dconf.profiles.gdm.databases = [
   {
     settings = {
       "org/gnome/login-screen" = {
         disable-user-list = true;
       };
-      "org/gnome/desktop/background" = {
-        picture-uri = "file://${./gdm-background.png}";
-        picture-uri-dark = "file://${./gdm-background.png}";
-        picture-options = "zoom";
-      };
+      #"org/gnome/desktop/background" = {
+      #  picture-uri = "file://${./gdm-background.png}";
+      #  picture-uri-dark = "file://${./gdm-background.png}";
+      #  picture-options = "zoom";
+      #};
     };
   }
 ];
+*/
 }
 
