@@ -52,6 +52,14 @@
   enable = true;
   package = pkgs.gnome.gvfs;
 };
+  #freeipa
+  security.ipa = {
+    enable = true;
+    domain = "bhs.local";
+    realm = "BHS.LOCAL";
+    server = "ipa.bhs.local";
+  };
+
 
 
   # Bluetooth
