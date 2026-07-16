@@ -19,6 +19,11 @@ programs.dconf.profiles.gdm.databases = [
       "org/gnome/login-screen" = {
         disable-user-list = true;
       };
+      "org/gnome/desktop/background" = {
+        picture-uri = "file://${./Artboard 1.png}";
+        picture-uri-dark = "file://${./Artboard 1.png}";
+        picture-options = "zoom";
+      };
     };
   }
 ];
