@@ -20,8 +20,8 @@ programs.dconf.profiles.gdm.databases = [
         disable-user-list = true;
       };
       "org/gnome/desktop/background" = {
-        picture-uri = "file://${./Artboard 1.png}";
-        picture-uri-dark = "file://${./Artboard 1.png}";
+        picture-uri = "file://${./gdm-background.png}";
+        picture-uri-dark = "file://${./gdm-background.png}";
         picture-options = "zoom";
       };
     };
