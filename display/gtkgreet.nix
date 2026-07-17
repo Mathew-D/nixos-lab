@@ -1,10 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-  # Background image for gtkgreet
   environment.etc."greetd/background.png".source = ./gdm-background.png;
 
-  # GTK CSS for gtkgreet
   environment.etc."greetd/gtkgreet.css".text = ''
     window {
       background-image: url("/etc/greetd/background.png");
@@ -30,17 +28,18 @@
   services.greetd = {
     enable = true;
 
-    settings = {
-      default_session = {
-        user = "greeter";
+    settings.default_session = {
+      user = "greeter";
 
-        command = ''
-      ${pkgs.cage}/bin/cage -s -- \
-        env GTK_CSS_FILE=/etc/greetd/gtkgreet.css \
-        ${pkgs.gtkgreet}/bin/gtkgreet \
-        -c "dbus-run-session startplasma-wayland"
-    '';
-      };
+      command = ''
+        ${pkgs.cage}/bin/cage -s -- \
+          env GTK_CSS_FILE=/etc/greetd/gtkgreet.css \
+          ${pkgs.gtkgreet}/bin/gtkgreet
+      '';
     };
   };
+
+  services.displayManager.sessionPackages = [
+    pkgs.kdePackages.plasma-workspace
+  ];
 }
