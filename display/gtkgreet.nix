@@ -11,12 +11,13 @@
     }
 
     * {
-      color: white;
+      color: red;
     }
   '';
 
   environment.etc."greetd/environments".text = ''
     dbus-run-session startplasma-wayland
+    dbus-run-session niri-session
   '';
 
   environment.systemPackages = with pkgs; [
@@ -33,7 +34,8 @@
       command = ''
         ${pkgs.cage}/bin/cage -s -- \
           ${pkgs.gtkgreet}/bin/gtkgreet \
-          -s /etc/greetd/gtkgreet.css
+          -s /etc/greetd/gtkgreet.css \
+          -c "dbus-run-session startplasma-wayland"
       '';
     };
   };
