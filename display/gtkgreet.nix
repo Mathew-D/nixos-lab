@@ -35,10 +35,11 @@
         user = "greeter";
 
         command = ''
-          ${pkgs.cage}/bin/cage -s -- \
-            ${pkgs.gtkgreet}/bin/gtkgreet \
-              -c /etc/greetd/gtkgreet.css
-        '';
+      ${pkgs.cage}/bin/cage -s -- \
+        env GTK_CSS_FILE=/etc/greetd/gtkgreet.css \
+        ${pkgs.gtkgreet}/bin/gtkgreet \
+        -c "dbus-run-session startplasma-wayland"
+    '';
       };
     };
   };
