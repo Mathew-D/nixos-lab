@@ -29,12 +29,6 @@ outputs = { self, nixpkgs, ... }@inputs:
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [ 
-          ({ lib, ... }: {
-    disabledModules = [
-      "security/ipa.nix"
-    ];
-  })
-          ./modules/security/ipa.nix
         ./hosts/${name}.nix 
       ];
     };

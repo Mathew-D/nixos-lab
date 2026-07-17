@@ -66,19 +66,6 @@
     };
   };
 
-/*
-services.sssd.enable=true;
-
-services.sssd.settings = {
-  "domain/bhs.local" = {
-    enumerate = true;
-    cache_credentials = true;
-    fallback_homedir = "/home/%u";
-    default_shell = "/run/current-system/sw/bin/bash";
-  };
-};
-*/
-
 services.accounts-daemon.enable = true;
 
   # Bluetooth
