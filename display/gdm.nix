@@ -13,6 +13,12 @@
     ];
   };
 
+
+ services.gdm-back = {
+    enable = true;
+    backgroundImage = ./gdm-background.png;
+  };
+
   programs.dconf.profiles.gdm.databases = lib.mkBefore [
     {
       settings = {

@@ -13,7 +13,7 @@
     ./modules/env.nix
     ./modules/skel.nix
     ./modules/theme.nix
-    
+     /modules/gdm-back.nix
   ];
 
 # Turn flakes on and trust Noctalia cache
