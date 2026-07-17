@@ -2,11 +2,11 @@
 
 {
    nixpkgs.overlays = [
-    (import ../modules/gdm-background-overlay.nix {
-      backgroundImage = ../modules/gdm-background.png;
+    (import ./modules/gdm-background-overlay.nix {
+      backgroundImage = ./display/gdm-background.png;
     })
   ];
-  
+
   imports = [
    ./display/gdm.nix
    # ./display/regreet.nix
