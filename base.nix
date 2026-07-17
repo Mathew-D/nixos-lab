@@ -1,6 +1,12 @@
 { config, pkgs, inputs, ... }:
 
 {
+   nixpkgs.overlays = [
+    (import ../modules/gdm-background-overlay.nix {
+      backgroundImage = ../modules/gdm-background.png;
+    })
+  ];
+  
   imports = [
    ./display/gdm.nix
    # ./display/regreet.nix
