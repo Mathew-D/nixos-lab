@@ -48,7 +48,7 @@ in {
 
   config = mkIf cfg.enable {
     # Ensure GDM is enabled
-    services.xserver.displayManager.gdm.enable = mkDefault true;
+    services.displayManager.gdm.enable = mkDefault true;
 
     # Override gnome-shell with custom background via overlay
     nixpkgs.overlays = [
