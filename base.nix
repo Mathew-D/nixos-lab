@@ -1,16 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
-   nixpkgs.overlays = [
-    (import ./modules/gdm-background-overlay.nix {
-      backgroundImage = ./display/gdm-background.png;
-    })
-  ];
-
   imports = [
-   ./display/gdm.nix
+   #./display/gdm.nix
    # ./display/regreet.nix
-   #./display/gtkgreet.nix
+   ./display/gtkgreet.nix
     ./desktop/niri.nix
     ./desktop/plasma.nix
     ./users
@@ -20,7 +14,6 @@
     ./modules/env.nix
     ./modules/skel.nix
     ./modules/theme.nix
-     ./modules/gdm-back.nix
   ];
 
 # Turn flakes on and trust Noctalia cache
