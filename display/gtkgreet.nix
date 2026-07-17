@@ -38,8 +38,4 @@
       '';
     };
   };
-
-  services.displayManager.sessionPackages = [
-    pkgs.kdePackages.plasma-workspace
-  ];
 }
