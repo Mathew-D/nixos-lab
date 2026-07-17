@@ -32,7 +32,7 @@
       GTK = {
         application_prefer_dark_theme = true;
         cursor_theme_name = "Adwaita";
-        font_name = lib,mkForce "Sans 12";
+        font_name = lib.mkForce "Sans 12";
       };
     };
   };
