@@ -6,6 +6,15 @@
   # FreeIPA / SSSD
   services.sssd.enable = true;
 
+security.pam.services.greetd.rules.session.mkHome = {
+  order = 120;
+  control = "optional";
+  modulePath = "${pkgs.linux-pam}/lib/security/pam_mkhomedir.so";
+  args = [
+    "skel=/etc/skel"
+    "umask=0077"
+  ];
+};
 
   # greetd + regreet
   services.greetd = {
