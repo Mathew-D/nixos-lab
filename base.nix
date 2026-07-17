@@ -12,6 +12,7 @@
     ./modules/env.nix
     ./modules/skel.nix
     ./modules/theme.nix
+    
   ];
 
 # Turn flakes on and trust Noctalia cache
@@ -65,7 +66,7 @@
     };
   };
 
-
+/*
 services.sssd.enable=true;
 
 services.sssd.settings = {
@@ -76,6 +77,7 @@ services.sssd.settings = {
     default_shell = "/run/current-system/sw/bin/bash";
   };
 };
+*/
 
 services.accounts-daemon.enable = true;
 

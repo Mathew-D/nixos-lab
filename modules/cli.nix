@@ -34,7 +34,7 @@
     wireguard-tools
     pciutils
     gpu-screen-recorder
-    sssd
+    #sssd
 
     #Dev Tools
     jdk25

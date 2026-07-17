@@ -28,7 +28,15 @@ outputs = { self, nixpkgs, ... }@inputs:
     mkHost = name: nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs; };
-      modules = [ ./hosts/${name}.nix ];
+      modules = [ 
+          ({ lib, ... }: {
+    disabledModules = [
+      "security/ipa.nix"
+    ];
+  })
+          ./modules/security/ipa.nix
+        ./hosts/${name}.nix 
+      ];
     };
 
     hosts = [ "lab01" "lab02" ];
