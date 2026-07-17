@@ -2,7 +2,7 @@
 
 {
   imports = [
-   # ./display/gdm.nix
+   ./display/gdm.nix
    
     ./desktop/niri.nix
     ./desktop/plasma.nix
@@ -15,7 +15,7 @@
     ./modules/theme.nix
     
   ];
-services.displayManager.plasma-login-manager.enable = true;
+
 # Turn flakes on and trust Noctalia cache
  nix.settings = {
     experimental-features = [
