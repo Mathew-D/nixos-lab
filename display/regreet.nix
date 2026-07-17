@@ -25,25 +25,27 @@
 
 
   # regreet configuration
-  programs.regreet = {
-    enable = true;
+ programs.regreet = {
+  enable = true;
 
-    settings = {
-      background = {
-        path = "/etc/greetd/background.png";
-        fit = "cover";
-      };
+  settings = {
+    GTK = {
+      application_prefer_dark_theme = true;
+    };
 
-      appearance = {
-        greeting_msg = "FreeIPA Lab Login";
-      };
-
-      GTK = {
-        application_prefer_dark_theme = true;
-      };
+    appearance = {
+      greeting_msg = "FreeIPA Lab Login";
     };
   };
 
+  extraCss = ''
+    window {
+      background-image: url("file:///etc/greetd/background.png");
+      background-size: cover;
+      background-position: center;
+    }
+  '';
+};
 
   # Background image
   environment.etc."greetd/background.png".source = ./gdm-background.png;
