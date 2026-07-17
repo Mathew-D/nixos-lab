@@ -3,7 +3,7 @@
 {
   imports = [
    #./display/gdm.nix
-   ./display/regreet.nix
+    ./display/regreet.nix
     ./desktop/niri.nix
     ./desktop/plasma.nix
     ./users
