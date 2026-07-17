@@ -33,6 +33,7 @@
 
       command = ''
         ${pkgs.cage}/bin/cage -s -- \
+         env LANG=en_US.UTF-8 LC_TIME=en_US.UTF-8 \
           ${pkgs.gtkgreet}/bin/gtkgreet \
           -s /etc/greetd/gtkgreet.css \
           -c "dbus-run-session startplasma-wayland"
