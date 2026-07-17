@@ -19,29 +19,5 @@
     backgroundImage = ./gdm-background.png;
   };
 
-  programs.dconf.profiles.gdm.databases = lib.mkBefore [
-    {
-      settings = {
-        "org/gnome/desktop/background" = {
-          picture-uri = "file://${./gdm-background.png}";
-          picture-uri-dark = "file://${./gdm-background.png}";
-          picture-options = "zoom";
-        };
-        "org/gnome/desktop/screensaver" = {
-          picture-uri = "file://${./gdm-background.png}";
-          picture-uri-dark = "file://${./gdm-background.png}";
-          picture-options = "zoom";
-        };
-      };
-      locks = [
-        "/org/gnome/desktop/background/picture-uri"
-        "/org/gnome/desktop/background/picture-uri-dark"
-        "/org/gnome/desktop/background/picture-options"
-        "/org/gnome/desktop/screensaver/picture-uri"
-        "/org/gnome/desktop/screensaver/picture-uri-dark"
-        "/org/gnome/desktop/screensaver/picture-options"
-      ];
-    }
-  ];
 }
 
