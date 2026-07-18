@@ -18,8 +18,7 @@ let
     echo "Getting Kerberos ticket from host keytab..."
     kinit -kt /etc/krb5.keytab
 
-    BASEDN=$(awk -F'=' '/^basedn=/ {print $2}' /etc/ipa/default.conf)
-
+BASEDN="dc=bhs,dc=local"
     echo "Searching IPA users..."
 
     ldapsearch \
