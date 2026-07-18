@@ -14,7 +14,7 @@
 
  systemd.tmpfiles.rules = [
     "d /var/lib/noctalia-greeter 0755 root root -"
-    "C /var/lib/noctalia-greeter/wallpaper.png 0644 root root - ${./gdm-background.png}"
+    "C /var/lib/noctalia-greeter/wallpaper.png 0644 root root - ${./wallpaper.png}"
     "C /var/lib/noctalia-greeter/appearance.json 0644 root root - ${./appearance.json}"
   ];
 
