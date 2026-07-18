@@ -35,7 +35,7 @@ outputs = { self, nixpkgs, ... }@inputs:
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [ 
-        ./hosts/${name}.nix 
+          ./hosts/${name}/default.nix
       ];
     };
 
