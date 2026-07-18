@@ -15,7 +15,7 @@ let
     echo "Getting Kerberos ticket from host keytab..."
     kinit -k
 
-    BASEDN=$(awk -F' = ' '/basedn/ {print $2}' /etc/ipa/default.conf)
+   BASEDN=$(awk -F'=' '/basedn/ {gsub(/[[:space:]]/, "", $2); print $2}' /etc/ipa/default.conf)
 
     if [ -z "$BASEDN" ]; then
       echo "Could not determine IPA basedn"
