@@ -12,32 +12,30 @@ let
       pkgs.systemd
     ]}
 
+    # Use a separate Kerberos cache for the service
+    export KRB5CCNAME=/run/ipa-cache.krb5cc
+
     echo "Getting Kerberos ticket from host keytab..."
-    kinit -k
+    kinit -kt /etc/krb5.keytab
 
-   BASEDN=$(awk -F'=' '/basedn/ {gsub(/[[:space:]]/, "", $2); print $2}' /etc/ipa/default.conf)
-
-    if [ -z "$BASEDN" ]; then
-      echo "Could not determine IPA basedn"
-      exit 1
-    fi
+    BASEDN=$(awk -F'=' '/^basedn=/ {print $2}' /etc/ipa/default.conf)
 
     echo "Searching IPA users..."
 
     ldapsearch \
       -LLL \
       -Y GSSAPI \
-      -b "cn=users,cn=accounts,$BASEDN" \
+      -b "cn=users,cn=compat,$BASEDN" \
       "(objectClass=posixAccount)" uid |
       awk '/^uid:/ {print $2}' |
       while read -r user; do
 
         echo "Caching $user"
 
-        # Load user through SSSD
+        # Force SSSD to resolve/cache the account
         getent passwd "$user" >/dev/null || true
 
-        # Add to AccountsService
+        # Cache in AccountsService
         busctl call \
           org.freedesktop.Accounts \
           /org/freedesktop/Accounts \
@@ -83,6 +81,7 @@ in
       Type = "oneshot";
       ExecStart = cacheIpaUsers;
       RemainAfterExit = true;
+      User = "root";
     };
   };
 }
