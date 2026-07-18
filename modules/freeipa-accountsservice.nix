@@ -4,12 +4,14 @@ let
   cacheIpaUsers = pkgs.writeShellScript "cache-ipa-users" ''
     set -euo pipefail
 
-    export PATH=${lib.makeBinPath [
+     export PATH=${lib.makeBinPath [
       pkgs.krb5
       pkgs.openldap
       pkgs.gawk
       pkgs.coreutils
       pkgs.systemd
+      pkgs.glibc
+       pkgs.getent
     ]}
 
     # Use a separate Kerberos cache for the service
