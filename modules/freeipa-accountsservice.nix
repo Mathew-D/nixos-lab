@@ -4,23 +4,28 @@ let
   cacheIpaUsers = pkgs.writeShellScript "cache-ipa-users" ''
     set -euo pipefail
 
-     export PATH=${lib.makeBinPath [
+    export PATH=${lib.makeBinPath [
       pkgs.krb5
       pkgs.openldap
       pkgs.gawk
       pkgs.coreutils
       pkgs.systemd
       pkgs.glibc
-       pkgs.getent
+      pkgs.gnugrep
+      pkgs.gnused
+      pkgs.getent
     ]}
 
-    # Use a separate Kerberos cache for the service
     export KRB5CCNAME=/run/ipa-cache.krb5cc
 
     echo "Getting Kerberos ticket from host keytab..."
     kinit -kt /etc/krb5.keytab
 
-BASEDN="dc=bhs,dc=local"
+    BASEDN="dc=bhs,dc=local"
+
+    IPA_USERS=$(mktemp)
+    trap "rm -f $IPA_USERS" EXIT
+
     echo "Searching IPA users..."
 
     ldapsearch \
@@ -28,22 +33,61 @@ BASEDN="dc=bhs,dc=local"
       -Y GSSAPI \
       -b "cn=users,cn=compat,$BASEDN" \
       "(objectClass=posixAccount)" uid |
-      awk '/^uid:/ {print $2}' |
-      while read -r user; do
+      awk '/^uid:/ {print $2}' > "$IPA_USERS"
 
-        echo "Caching $user"
 
-        # Force SSSD to resolve/cache the account
-        getent passwd "$user" >/dev/null || true
+    #
+    # Add/update IPA users in AccountsService
+    #
+    while read -r user; do
 
-        # Cache in AccountsService
-        busctl call \
-          org.freedesktop.Accounts \
-          /org/freedesktop/Accounts \
-          org.freedesktop.Accounts \
-          CacheUser s "$user" || true
+      echo "Caching $user"
 
-      done
+      # Force SSSD to resolve/cache the account
+      getent passwd "$user" >/dev/null || true
+
+      # Cache in AccountsService
+      busctl call \
+        org.freedesktop.Accounts \
+        /org/freedesktop/Accounts \
+        org.freedesktop.Accounts \
+        CacheUser s "$user" || true
+
+    done < "$IPA_USERS"
+
+
+    #
+    # Remove stale IPA users
+    #
+    for file in /var/lib/AccountsService/users/*; do
+
+      [ -e "$file" ] || continue
+
+      cached_user=$(basename "$file")
+
+      # Never remove local accounts
+      case "$cached_user" in
+        root|mdusome)
+          continue
+          ;;
+      esac
+
+
+      if ! grep -qx "$cached_user" "$IPA_USERS"; then
+
+        echo "Removing stale user $cached_user"
+
+        uid=$(id -u "$cached_user" 2>/dev/null || true)
+
+        if [ -n "$uid" ]; then
+            rm -f "/var/lib/AccountsService/users/$cached_user"
+            echo "Removed AccountsService cache for $cached_user"
+        fi
+
+      fi
+
+    done
+
 
     echo "IPA AccountsService cache complete"
   '';
