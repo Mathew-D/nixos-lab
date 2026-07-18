@@ -16,6 +16,12 @@ nixConfig = {
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
+devin = {
+     url = "github:Mathew-D/devin-desktop-nix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+
   noctalia = {
   url = "github:noctalia-dev/noctalia/cachix";
   };

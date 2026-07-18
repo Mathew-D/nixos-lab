@@ -16,6 +16,8 @@
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     scenebuilder
 
+    inputs.devin.packages.x86_64-linux.default
+
   (pkgs.vscode.fhsWithPackages (ps: with ps; [
      #Rust 
     libX11
