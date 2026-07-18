@@ -18,6 +18,23 @@
     "surface_variant": "#262626",
     "tertiary": "#BE95FF"
   },
+  "session": {
+    "actions": [
+      {
+        "action": "lock"
+      },
+      {
+        "action": "logout"
+      },
+      {
+        "action": "reboot"
+      },
+      {
+        "action": "shutdown",
+        "variant": "destructive"
+      }
+    ]
+  },
   "theme_mode": "dark",
   "version": 1,
   "wallpaper": {
