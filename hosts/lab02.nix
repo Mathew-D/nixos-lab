@@ -5,4 +5,5 @@
   ];
 
   networking.hostName = "lab02";
+  networking.domain = "bhs.local";
 }
