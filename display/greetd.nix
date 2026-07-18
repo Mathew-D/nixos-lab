@@ -16,6 +16,7 @@
     "d /var/lib/noctalia-greeter 0755 root root -"
     "C /var/lib/noctalia-greeter/wallpaper.png 0644 root root - ${./wallpaper.png}"
     "C /var/lib/noctalia-greeter/appearance.json 0644 root root - ${./appearance.json}"
+    "C /var/lib/noctalia-greeter/greeter.toml 0644 greeter greeter - ${./greeter.toml}"
   ];
 
 
