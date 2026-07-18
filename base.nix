@@ -4,7 +4,9 @@
   imports = [
    #./display/gdm.nix
    # ./display/regreet.nix
-   ./display/gtkgreet.nix
+   #./display/gtkgreet.nix
+   ./modules/freeipa-accountsservice.nix
+   ./display/greetd.nix
     ./desktop/niri.nix
     ./desktop/plasma.nix
     ./users
