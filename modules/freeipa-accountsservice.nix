@@ -5,37 +5,36 @@ let
     set -euo pipefail
 
     export PATH=${lib.makeBinPath [
-      pkgs.freeipa
+      pkgs.krb5
+      pkgs.openldap
       pkgs.gawk
-      pkgs.gnugrep
-      pkgs.systemd
       pkgs.coreutils
+      pkgs.systemd
     ]}
 
-    echo "Waiting for FreeIPA..."
+    echo "Getting Kerberos ticket from host keytab..."
+    kinit -k
 
-    for i in $(seq 1 60); do
-      if ipa user-find --pkey-only --all >/dev/null 2>&1; then
-        break
-      fi
+    BASEDN=$(awk -F' = ' '/basedn/ {print $2}' /etc/ipa/default.conf)
 
-      sleep 2
-    done
-
-    if ! ipa user-find --pkey-only --all >/dev/null 2>&1; then
-      echo "FreeIPA unavailable"
+    if [ -z "$BASEDN" ]; then
+      echo "Could not determine IPA basedn"
       exit 1
     fi
 
-    echo "Caching FreeIPA users..."
+    echo "Searching IPA users..."
 
-    ipa user-find --pkey-only --all \
-      | awk -F': ' '/User login:/ {print $2}' \
-      | while read -r user; do
+    ldapsearch \
+      -LLL \
+      -Y GSSAPI \
+      -b "cn=users,cn=accounts,$BASEDN" \
+      "(objectClass=posixAccount)" uid |
+      awk '/^uid:/ {print $2}' |
+      while read -r user; do
 
         echo "Caching $user"
 
-        # Pull user into SSSD cache
+        # Load user through SSSD
         getent passwd "$user" >/dev/null || true
 
         # Add to AccountsService
@@ -47,16 +46,15 @@ let
 
       done
 
-    echo "FreeIPA user cache complete"
+    echo "IPA AccountsService cache complete"
   '';
 
 in
 {
-  # Make sure AccountsService exists
   services.accounts-daemon.enable = true;
 
   systemd.services.accountsservice-ipa-cache = {
-    description = "Cache FreeIPA users into AccountsService";
+    description = "Cache FreeIPA users in AccountsService";
 
     wantedBy = [
       "graphical.target"
