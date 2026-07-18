@@ -30,7 +30,28 @@ security.pam.services.greetd.rules.session.mkHome = {
   ];
 };
 
-  services.greetd.settings.default_session.user = "greeter";
+security.pam.services.greetd.kwallet = {
+    enable = true;
+    forceRun = true;
+  };
+
+  services.dbus.packages = with pkgs.kdePackages; [ kwallet ];
+  xdg.portal.extraPortals = with pkgs.kdePackages; [ kwallet ];
+
+  systemd.user.services.pam-kwallet-init = {
+    description = "Unlock kwallet from pam credentials";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init";
+      Slice = "background.slice";
+      Restart = "no";
+    };
+  };
+  
+services.greetd.settings.default_session.user = "greeter";
 
 programs.noctalia-greeter = {
   enable = true;
