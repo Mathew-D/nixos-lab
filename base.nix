@@ -44,9 +44,9 @@
     "rc-manager" = "unmanaged";
   };
   networking.resolvconf.enable = false;
-  networking.nameservers = [ "192.168.2.92" ];
+  networking.nameservers = [ "172.22.14.10" ];
   environment.etc."resolv.conf".text = ''
-    nameserver 192.168.2.92
+    nameserver 172.22.14.10
   '';
   networking.firewall.enable = true;
   services.gvfs = {
