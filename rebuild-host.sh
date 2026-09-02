@@ -21,4 +21,4 @@ fi
 sudo rm -f /etc/resolv.conf
 printf 'nameserver 172.22.14.10\n' | sudo tee /etc/resolv.conf >/dev/null
 
-sudo nixos-rebuild switch --flake --impure ".#$hostname"
+sudo nixos-rebuild switch --flake ".#$hostname" --impure
