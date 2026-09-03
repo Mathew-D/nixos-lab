@@ -39,13 +39,13 @@ outputs = { self, nixpkgs, ... }@inputs:
       ];
     };
 
-    hosts = builtins.genList (
+    hosts = (builtins.genList (
       i:
       let
         n = i + 1;
       in
       "lab${if n < 10 then "0${toString n}" else toString n}"
-    ) 32;
+    ) 32) ++ [ "teacher" ];
   in {
     nixosConfigurations = builtins.listToAttrs (
       map (name: {
