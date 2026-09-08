@@ -8,5 +8,5 @@
   luanti
   davinci-resolve
   kdePackages.kdenlive
-  ]
+  ];
 }
