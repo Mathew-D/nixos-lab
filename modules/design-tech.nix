@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-  grimp
+  gimp
   krita
   inkscape
   luanti
