@@ -108,6 +108,32 @@ fonts.packages = with pkgs; [
   hardware.graphics.enable32Bit = true; 
   hardware.amdgpu.opencl.enable = true;
 
+  boot.supportedFilesystems = [ "cifs" ];
+
+  environment.systemPackages = with pkgs; [
+    cifs-utils
+  ];
+
+  systemd.tmpfiles.rules = [
+    "d /mnt/teacher 0777 root root - -"
+  ];
+
+  fileSystems."/mnt/teacher" = {
+    device = "//teacher.bhs.local/teacher";
+    fsType = "cifs";
+    options = [
+      "guest"
+      "nofail"
+      "_netdev"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=600"
+      "vers=3.0"
+      "iocharset=utf8"
+      "dir_mode=0777"
+      "file_mode=0666"
+    ];
+  };
+
   # Printing
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [

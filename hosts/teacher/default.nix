@@ -5,7 +5,7 @@
   ];
 
   environment.systemPackages = [
-    inputs.pcloud.packages.${pkgs.system}.pcloud
+    inputs.pcloud.packages.${pkgs.stdenv.hostPlatform.system}.pcloud
   ];
 
   networking.hostName = "teacher";
