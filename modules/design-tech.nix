@@ -8,5 +8,6 @@
   luanti
   davinci-resolve
   kdePackages.kdenlive
+  blender
   ];
 }
