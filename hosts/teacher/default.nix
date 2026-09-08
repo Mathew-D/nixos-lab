@@ -1,7 +1,11 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
   imports = [
     ../../base.nix
     /etc/nixos/hardware-configuration.nix
+  ];
+
+  environment.systemPackages = [
+    inputs.pcloud.packages.${pkgs.system}.pcloud
   ];
 
   networking.hostName = "teacher";

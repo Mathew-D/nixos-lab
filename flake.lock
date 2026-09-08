@@ -89,12 +89,33 @@
         "type": "github"
       }
     },
+    "pcloud": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784929595,
+        "narHash": "sha256-kU5+/OZsGWrXfaRr7wGa/8qlxqCBN0QSUFu4ubTTq+M=",
+        "owner": "Mathew-D",
+        "repo": "pcloud-nix",
+        "rev": "96be68668f7671cbbad84e644537639377a50d61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mathew-D",
+        "repo": "pcloud-nix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "devin": "devin",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
-        "noctalia-greeter": "noctalia-greeter"
+        "noctalia-greeter": "noctalia-greeter",
+        "pcloud": "pcloud"
       }
     },
     "systems": {

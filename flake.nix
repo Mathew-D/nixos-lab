@@ -25,6 +25,11 @@ devin = {
   noctalia = {
   url = "github:noctalia-dev/noctalia/cachix";
   };
+
+  pcloud = {
+    url = "github:Mathew-D/pcloud-nix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
   };
 
 outputs = { self, nixpkgs, ... }@inputs:

@@ -100,6 +100,28 @@ fonts.packages = with pkgs; [
 
   # Printing
   services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    gutenprint
+    hplipWithPlugin
+  ];
+  services.printing.browsing = true;
+  services.printing.openFirewall = true;
+  services.ipp-usb.enable = true;
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  hardware.printers.ensurePrinters = [
+    {
+      name = "Dell-C2660dn";
+      description = "Dell C2660dn color laser";
+      deviceUri = "ipp://172.22.14.24/ipp";
+      model = "everywhere";
+    }
+  ];
 
   # Audio (PipeWire)
   services.pulseaudio.enable = false;
