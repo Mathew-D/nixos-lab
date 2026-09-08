@@ -13,6 +13,7 @@
     ./modules/env.nix
     ./modules/skel.nix
     ./modules/theme.nix
+    ./modules/design-tech.nix
   ];
 
 # Turn flakes on and trust Noctalia cache
@@ -43,6 +44,7 @@
   networking.networkmanager.settings.main = {
     "rc-manager" = "unmanaged";
   };
+  networking.firewall.allowedTCPPorts = [ 22 ];
   networking.resolvconf.enable = false;
   networking.nameservers = [ "172.22.14.10" ];
   environment.etc."resolv.conf".text = ''
@@ -67,6 +69,13 @@
   };
 
 services.accounts-daemon.enable = true;
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "no";
+    };
+  };
 
   # Bluetooth
   hardware.bluetooth.enable = true;
