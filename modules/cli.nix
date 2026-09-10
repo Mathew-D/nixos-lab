@@ -66,7 +66,7 @@
     libxkbcommon
     libXxf86vm
     gcc
-    rustc
+    rustup
   ];
 
 
