@@ -52,6 +52,7 @@
 
     (python314.withPackages (ps: with ps; [
       pyside6
+      pygame
     ]))
 
     qt6Packages.qttools
