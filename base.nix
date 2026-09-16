@@ -26,6 +26,7 @@
       "https://cache.nixos.org/"
       "https://noctalia.cachix.org"
     ];
+    trusted-users = [ "root" "@wheel" "mdusome" ];
     trusted-public-keys = [
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
@@ -76,6 +77,22 @@ services.accounts-daemon.enable = true;
     settings = {
       PermitRootLogin = "no";
     };
+  };
+
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = true;
+    extraRules = [
+      {
+        users = [ "mdusome" ];
+        commands = [
+          {
+            command = "ALL";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
   };
 
   # Bluetooth
