@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }: {
   imports = [
     ../../base.nix
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   environment.systemPackages = [
