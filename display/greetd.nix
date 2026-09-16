@@ -50,7 +50,7 @@
 
   services.greetd.settings.default_session.user = "greeter";
 
-  programs.noctalia-greeter = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
     package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
