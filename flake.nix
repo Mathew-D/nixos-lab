@@ -10,6 +10,7 @@ nixConfig = {
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
  
   noctalia-greeter = {
     url = "github:noctalia-dev/noctalia-greeter";

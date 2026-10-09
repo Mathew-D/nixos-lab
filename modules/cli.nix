@@ -35,7 +35,7 @@
     pciutils
     gpu-screen-recorder
     #sssd
-
+    zenity
     #Dev Tools
     jdk25
     openjfx

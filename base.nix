@@ -1,6 +1,18 @@
 { config, pkgs, inputs, ... }:
 
 {
+  nixpkgs.overlays = [
+    (final: prev:
+    let
+      unstable = import inputs.nixpkgs-unstable {
+        system = prev.stdenv.hostPlatform.system;
+        config.allowUnfree = true;
+      };
+    in {
+      euro-office-desktopeditors = unstable.euro-office-desktopeditors;
+    })
+  ];
+
   imports = [
    ./modules/freeipa-accountsservice.nix
    ./display/greetd.nix

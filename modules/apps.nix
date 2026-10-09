@@ -12,6 +12,7 @@
     nwg-look
     foot
     libreoffice-fresh
+    euro-office-desktopeditors
     masterpdfeditor4
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     scenebuilder
