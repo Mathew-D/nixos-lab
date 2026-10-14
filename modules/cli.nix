@@ -42,7 +42,7 @@
     libXtst
     glib
     gtk3
-
+    corefonts
 
     mesa
     libglvnd

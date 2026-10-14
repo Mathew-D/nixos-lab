@@ -29,6 +29,8 @@
     libXxf86vm
     glib
     libXtst
+    gtk3
+    libGL
     ]))
 
    (writeShellScriptBin "processing" ''
