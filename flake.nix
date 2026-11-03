@@ -31,6 +31,11 @@ devin = {
     url = "github:Mathew-D/pcloud-nix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
+
+  euro-office = {
+    url = "github:Mathew-D/nix-euro-office";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
   };
 
 outputs = { self, nixpkgs, ... }@inputs:

@@ -11,6 +11,7 @@
     google-chrome
     nwg-look
     foot
+    ffmpeg
     libreoffice-fresh
     euro-office-desktopeditors
     masterpdfeditor4
@@ -30,7 +31,8 @@
     glib
     libXtst
     gtk3
-    libGL
+    ffmpeg_4
+    maven
     ]))
 
    (writeShellScriptBin "processing" ''

@@ -2,14 +2,8 @@
 
 {
   nixpkgs.overlays = [
-    (final: prev:
-    let
-      unstable = import inputs.nixpkgs-unstable {
-        system = prev.stdenv.hostPlatform.system;
-        config.allowUnfree = true;
-      };
-    in {
-      euro-office-desktopeditors = unstable.euro-office-desktopeditors;
+    (final: prev: {
+      euro-office-desktopeditors = inputs.euro-office.packages.${prev.stdenv.hostPlatform.system}.default;
     })
   ];
 
