@@ -1,0 +1,14 @@
+# Umbriel configuration for the NixOS lab skel.
+# Mirrors the Niri skel layout in TOML.
+
+[include]
+files = [
+  "src/general.toml",
+  "src/outputs.toml",
+  "src/input.toml",
+  "src/keybinds.toml",
+  "src/layout.toml",
+  "src/rules.toml",
+  "src/appearance.toml",
+  "src/animation.toml",
+]

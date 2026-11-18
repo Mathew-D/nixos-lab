@@ -1,0 +1,101 @@
+[keybinds]
+# Noctalia shell
+"Mod" = { action = "spawn noctalia msg panel-toggle launcher", repeat = false }
+"Mod+D" = { action = "spawn noctalia msg panel-toggle launcher", repeat = false }
+"Mod+Z" = { action = "spawn noctalia msg panel-toggle launcher /emo", repeat = false }
+"Mod+V" = { action = "spawn noctalia msg panel-toggle clipboard", repeat = false }
+"Mod+X" = { action = "spawn noctalia msg bar-toggle", repeat = false }
+"Mod+W" = { action = "spawn noctalia msg panel-toggle wallpaper", repeat = false }
+"Mod+Escape" = { action = "spawn noctalia msg panel-toggle session", repeat = false }
+"Mod+Shift+W" = { action = "spawn noctalia msg desktop-widgets-toggle-edit", repeat = false }
+"Mod+Shift+T" = { action = "spawn noctalia msg panel-toggle test", repeat = false }
+"Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+"Mod+Shift+E" = { action = "session-quit", repeat = false }
+"Print" = { action = "spawn noctalia msg screenshot-region", repeat = false }
+"Ctrl+Print" = { action = "spawn noctalia msg screenshot-fullscreen", repeat = false }
+"Alt+Print" = { action = "spawn noctalia msg screenshot-window", repeat = false }
+
+# Media keys through Noctalia
+"XF86AudioRaiseVolume" = { action = "spawn noctalia msg volume-up 1", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn noctalia msg volume-down 1", allow_when_locked = true }
+"XF86AudioMute" = { action = "spawn noctalia msg volume-mute", allow_when_locked = true, repeat = false }
+"XF86AudioMicMute" = { action = "spawn noctalia msg mic-mute", allow_when_locked = true }
+"XF86AudioMedia" = { action = "spawn noctalia msg media toggle", allow_when_locked = true }
+"XF86AudioPlay" = { action = "spawn noctalia msg media toggle", allow_when_locked = true }
+"XF86AudioNext" = { action = "spawn noctalia msg media next", allow_when_locked = true }
+"XF86AudioPrev" = { action = "spawn noctalia msg media previous", allow_when_locked = true }
+"XF86MonBrightnessUp" = { action = "spawn noctalia msg brightness-up 1%", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn noctalia msg brightness-down 1%", allow_when_locked = true }
+
+# Launchers
+"Mod+Return" = { action = "spawn foot", repeat = false }
+"Mod+T" = { action = "spawn foot", repeat = false }
+"Mod+E" = { action = "spawn nautilus", repeat = false }
+"Mod+C" = { action = "spawn code", repeat = false }
+"Mod+B" = { action = "spawn firefox", repeat = false }
+
+# Window actions
+"Mod+Q" = { action = "window-close", repeat = false }
+"Mod+Space" = { action = "window-toggle-floating", repeat = false }
+"Mod+O" = { action = "overview-toggle", repeat = false }
+"Mod+MouseMiddle" = { action = "overview-toggle", repeat = false }
+"Mod+Slash" = { action = "window-consume-or-expel-left", repeat = false }
+
+# Primary extent presets (column width)
+"Mod+R" = { action = "window-cycle-primary-extent", repeat = false }
+"Mod+Shift+R" = { action = "window-cycle-primary-extent-back", repeat = false }
+"Mod+A" = { action = "window-set-primary-extent 0.333", repeat = false }
+"Mod+S" = { action = "window-set-primary-extent 0.5", repeat = false }
+"Mod+F" = { action = "window-set-primary-extent 1.0", repeat = false }
+
+# Secondary extent presets (row height)
+"Mod+Ctrl+A" = { action = "window-set-secondary-extent 0.333", repeat = false }
+"Mod+Ctrl+S" = { action = "window-set-secondary-extent 0.5", repeat = false }
+"Mod+Ctrl+D" = { action = "window-set-secondary-extent 0.667", repeat = false }
+"Mod+Ctrl+F" = { action = "window-set-secondary-extent 1.0", repeat = false }
+
+# Focus and movement
+"Mod+Left" = { action = "window-focus-left", repeat = true }
+"Mod+Right" = { action = "window-focus-right", repeat = true }
+"Mod+Up" = { action = "window-focus-up", repeat = true }
+"Mod+Down" = { action = "window-focus-down", repeat = true }
+"Mod+H" = { action = "window-focus-left", repeat = true }
+"Mod+L" = { action = "window-focus-right", repeat = true }
+"Mod+K" = { action = "window-focus-up", repeat = true }
+"Mod+J" = { action = "window-focus-down", repeat = true }
+"Mod+Shift+Left" = { action = "column-move-left", repeat = false }
+"Mod+Shift+Right" = { action = "column-move-right", repeat = false }
+"Mod+Shift+Up" = { action = "window-move-up", repeat = false }
+"Mod+Shift+Down" = { action = "window-move-down", repeat = false }
+
+# Workspaces
+"Mod+U" = { action = "workspace-next", repeat = false }
+"Mod+I" = { action = "workspace-previous", repeat = false }
+"Mod+1" = { action = "workspace-switch 1", repeat = false }
+"Mod+2" = { action = "workspace-switch 2", repeat = false }
+"Mod+3" = { action = "workspace-switch 3", repeat = false }
+"Mod+4" = { action = "workspace-switch 4", repeat = false }
+"Mod+5" = { action = "workspace-switch 5", repeat = false }
+"Mod+6" = { action = "workspace-switch 6", repeat = false }
+"Mod+7" = { action = "workspace-switch 7", repeat = false }
+"Mod+8" = { action = "workspace-switch 8", repeat = false }
+"Mod+9" = { action = "workspace-switch 9", repeat = false }
+"Mod+Shift+1" = { action = "column-move-to-workspace 1", repeat = false }
+"Mod+Shift+2" = { action = "column-move-to-workspace 2", repeat = false }
+"Mod+Shift+3" = { action = "column-move-to-workspace 3", repeat = false }
+"Mod+Shift+4" = { action = "column-move-to-workspace 4", repeat = false }
+"Mod+Shift+5" = { action = "column-move-to-workspace 5", repeat = false }
+"Mod+Shift+6" = { action = "column-move-to-workspace 6", repeat = false }
+"Mod+Shift+7" = { action = "column-move-to-workspace 7", repeat = false }
+"Mod+Shift+8" = { action = "column-move-to-workspace 8", repeat = false }
+"Mod+Shift+9" = { action = "column-move-to-workspace 9", repeat = false }
+
+# Outputs
+"Mod+Ctrl+Left" = { action = "output-focus-left", repeat = false }
+"Mod+Ctrl+Right" = { action = "output-focus-right", repeat = false }
+"Mod+Ctrl+Up" = { action = "output-focus-up", repeat = false }
+"Mod+Ctrl+Down" = { action = "output-focus-down", repeat = false }
+"Mod+Ctrl+H" = { action = "output-focus-left", repeat = false }
+"Mod+Ctrl+L" = { action = "output-focus-right", repeat = false }
+"Mod+Ctrl+K" = { action = "output-focus-up", repeat = false }
+"Mod+Ctrl+J" = { action = "output-focus-down", repeat = false }

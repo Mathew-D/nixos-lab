@@ -1,0 +1,12 @@
+[layout]
+mode = "scrolling"
+gap = 16
+extent_presets = [ 0.5, 0.667, 1.0 ]
+new_exits_fullscreen = []
+client_maximize = "column"
+
+[layout.scrolling]
+default_extent_fraction = 1.0
+center_underfull_strip = true
+center_focused = "never"
+center_on_overview_select = false

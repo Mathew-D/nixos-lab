@@ -1,0 +1,111 @@
+# Blur every window, matching the Noctalia Umbriel compositor example.
+[[window_rule]]
+blur = true
+blur_optimized = true
+
+# Keep the Noctalia settings window floating at a fixed size.
+[[window_rule]]
+match.app_id = [ '^dev\.noctalia\.Noctalia$', '^dev\.noctalia\.Noctalia\.Settings$' ]
+default_floating = true
+default_floating_size_px = { width = 1080, height = 920 }
+opacity = 0.9
+
+# Floating dialogs and utility windows from the Niri rules.
+[[window_rule]]
+match.app_id = [
+  '^org\.gtk\.Dialogs$',
+  '^zenity$',
+  '^pavucontrol$',
+  '^blueman-manager$',
+  '^nm-connection-editor$',
+  '^org\.gnome\.Nautilus\.Preferences$',
+  '^org\.gnome\.Evince\.Preferences$',
+  '^org\.gnome\.Nautilus$',
+  '^Thunar$',
+  '^code$',
+  '^vscode$',
+  '^kitty$',
+  '^foot$',
+  '^gnome-calculator$',
+  '^org\.gnome\.Calculator$',
+  '^org\.gnome\.Characters$',
+  '^org\.gnome\.Clocks$',
+  '^org\.gnome\.Fonts$',
+  '^org\.gnome\.Logs$',
+  '^org\.gnome\.SystemMonitor$',
+  '^org\.gnome\.TextEditor$',
+  '^org\.gnome\.Tweaks$',
+]
+default_floating = true
+
+[[window_rule]]
+match.title = [
+  '^Open File$',
+  '^Open Folder$',
+  '^Save As$',
+  '^Save File$',
+  '^Choose Application$',
+  '^Print$',
+  '^Print Preview$',
+  '^Page Setup$',
+  '^Preferences$',
+  '^Settings$',
+  '^About$',
+  '^Keyboard Shortcuts$',
+  '^Keyboard Shortcuts Editor$',
+  '^Color$',
+  '^Select Color$',
+  '^Select Font$',
+  '^Find$',
+  '^Replace$',
+  '^Go to Line$',
+  '^Unsaved Changes$',
+]
+default_floating = true
+
+[[window_rule]]
+match.app_id = '^thunderbird$'
+match.title = '^Write:.*$'
+default_floating = true
+
+[[window_rule]]
+match.app_id = '^filerdialog$'
+default_floating = true
+default_floating_size_px = { width = 920, height = 400 }
+
+[[window_rule]]
+match.app_id = [ '^mpv$', '^io\.mpv\.Mpv$' ]
+default_focused = true
+
+[[window_rule]]
+match.app_id = [ '^celluloid$', '^org\.celluloid_player\.Celluloid$' ]
+default_focused = true
+
+[[window_rule]]
+match.app_id = [ '^eog$', '^org\.GNOME\.eog$' ]
+default_focused = true
+
+[[window_rule]]
+match.app_id = '^firefox$'
+default_maximize = true
+
+# Translucent windows from the Niri rules.
+[[window_rule]]
+match.app_id = [ '^code$', '^thunar$', '^Thunar$', '^org\.gnome\.Nautilus$' ]
+opacity = 0.9
+
+# foot opens at half width in the scrolling layout.
+[[window_rule]]
+match.app_id = '^foot$'
+default_scrolling_extent = 0.5
+
+# Layer-shell blur for Noctalia surfaces.
+[[layer_rule]]
+match.namespace = '^noctalia-(bar-[^"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^"]*)$'
+blur = true
+blur_ignore_alpha = 0.5
+blur_popups = true
+
+[[layer_rule]]
+match.namespace = '^noctalia-(notification|dock|panel|attached-panel|osd)$'
+blur_optimized = false

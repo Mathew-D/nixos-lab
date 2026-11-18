@@ -1,0 +1,12 @@
+[general]
+autostart = [ "noctalia" ]
+mod_key = "Super"
+xwayland = true
+xwayland_native_resolution = true
+xwayland_xsettings = true
+show_cheatsheet = false
+focus_on_activate = false
+attach_modal_dialogs = true
+
+[environment]
+ELECTRON_OZONE_PLATFORM_HINT = "auto"

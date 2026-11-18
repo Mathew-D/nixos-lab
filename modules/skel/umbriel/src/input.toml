@@ -1,0 +1,13 @@
+[input.keyboard]
+layout = "us"
+numlock_toggle = true
+
+[input.cursor]
+theme = "Adwaita"
+size = 24
+hardware_cursor = true
+follows_focus = false
+
+[input.focus]
+follows_mouse = "sloppy"
+follows_mouse_max_scroll = 0.0
