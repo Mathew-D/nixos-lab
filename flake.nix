@@ -2,9 +2,13 @@
   description = "NixOS system - BHS";
 
 nixConfig = {
-    extra-substituters = [ "https://noctalia.cachix.org" ];
+    extra-substituters = [
+      "https://noctalia.cachix.org"
+      "https://umbriel.cachix.org"
+    ];
     extra-trusted-public-keys = [
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      "umbriel.cachix.org-1:JfNq/2yg2S6D6z4Z2dVSZrZlDPQTKtexB6GAVLD98nw="
     ];
   };
 
@@ -25,6 +29,10 @@ devin = {
 
   noctalia = {
   url = "github:noctalia-dev/noctalia/cachix";
+  };
+
+  umbriel = {
+    url = "github:noctalia-dev/umbriel/cachix";
   };
 
   pcloud = {

@@ -1,6 +1,6 @@
 [keybinds]
 # Noctalia shell
-"Mod" = { action = "spawn noctalia msg panel-toggle launcher", repeat = false }
+#"Mod" = { action = "spawn noctalia msg panel-toggle launcher", repeat = false }
 "Mod+D" = { action = "spawn noctalia msg panel-toggle launcher", repeat = false }
 "Mod+Z" = { action = "spawn noctalia msg panel-toggle launcher /emo", repeat = false }
 "Mod+V" = { action = "spawn noctalia msg panel-toggle clipboard", repeat = false }

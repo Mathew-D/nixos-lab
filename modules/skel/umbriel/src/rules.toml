@@ -20,12 +20,12 @@ match.app_id = [
   '^nm-connection-editor$',
   '^org\.gnome\.Nautilus\.Preferences$',
   '^org\.gnome\.Evince\.Preferences$',
-  '^org\.gnome\.Nautilus$',
-  '^Thunar$',
-  '^code$',
+#  '^org\.gnome\.Nautilus$',
+#  '^Thunar$',
+#  '^code$',
   '^vscode$',
   '^kitty$',
-  '^foot$',
+#  '^foot$',
   '^gnome-calculator$',
   '^org\.gnome\.Calculator$',
   '^org\.gnome\.Characters$',
@@ -66,11 +66,11 @@ default_floating = true
 [[window_rule]]
 match.app_id = '^thunderbird$'
 match.title = '^Write:.*$'
-default_floating = true
+#default_floating = true
 
 [[window_rule]]
 match.app_id = '^filerdialog$'
-default_floating = true
+#default_floating = true
 default_floating_size_px = { width = 920, height = 400 }
 
 [[window_rule]]

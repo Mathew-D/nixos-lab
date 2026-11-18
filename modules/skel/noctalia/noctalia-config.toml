@@ -2,17 +2,13 @@
 order = [ "Main" ]
 
     [bar.Main]
-    attach_panels = true
     background_opacity = 0.66999995708465576
-    capsule_groups = [ "Monitoring", "Sound" ]
     capsule_opacity = 0.0
     center = [ "active_window", "media" ]
     contact_shadow = true
     end = [ "tray", "group:g1", "notifications", "clipboard", "group:g2", "network", "caffeine", "clock", "control-center" ]
     margin_edge = 5
     margin_ends = 0
-    margin_h = 0
-    margin_v = 0
     padding = 12
     reserve_space = true
     scale = 1.2000000476837158
@@ -20,7 +16,7 @@ order = [ "Main" ]
     thickness = 31
 
         [[bar.Main.capsule_group]]
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g1"
         members = [ "ram", "cpu", "temp" ]
         opacity = 0.0
@@ -28,7 +24,7 @@ order = [ "Main" ]
         radius = 6.0
 
         [[bar.Main.capsule_group]]
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g2"
         members = [ "volume", "input_volume" ]
         opacity = 0.0
@@ -41,9 +37,7 @@ warning_threshold = 55
 [calendar]
 enabled = true
 
- 
 [control_center]
-compact = false
 sidebar = "full"
 sidebar_section = "full"
 
@@ -86,7 +80,6 @@ address = "Bowmanville. Canada"
 blur_intensity = 0.0
 tint_intensity = 0.0
 
-
 [lockscreen_widgets]
 enabled = false
 schema_version = 1
@@ -97,11 +90,6 @@ widget_order = [
     cell_size = 16
     major_interval = 4
     visible = true
-
-   
-
-[noctalia_state]
-setup_wizard_completed = true
 
 [osd]
 position = "top_right"
@@ -124,10 +112,10 @@ telemetry_enabled = true
 time_format = "{:%-I:%M %p}"
 
     [shell.panel]
-    attach_clipboard = true
-    attach_wallpaper = false
+    clipboard_placement = "attached"
     control_center_placement = "floating"
-    session_placement = "centered"
+    session_placement = "floating"
+    session_position = "center"
     transparency_mode = "glass"
     wallpaper_placement = "floating"
 
@@ -175,7 +163,7 @@ source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "foot", "gtk3", "gtk4",  "qt", "niri" ]
+    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "qt", "niri", "umbriel" ]
     community_ids = [ "vscode" ]
 
 [wallpaper]
@@ -184,12 +172,10 @@ directory = ""
     [wallpaper.automation]
     order = "random"
 
-
 [weather]
-address = "Bowmanville, Canada"
+enabled = true
 
 [widget.battery]
-capsule_group = "Monitoring"
 device = "/org/freedesktop/UPower/devices/battery_hidpp_battery_0"
 
 [widget.clock]
@@ -197,16 +183,16 @@ format = "{:%a, %b %-d  %-I:%M %p }"
 vertical_format = "{:%a, %b %-d \\n %-I:%M %p }"
 
 [widget.cpu]
-capsule_group = "Monitoring"
 highlight_color = "on_surface"
-show_label = false
+show_value = false
+stat = "cpu_usage"
+type = "sysmon"
 
 [widget.gpu-usage]
 stat = "gpu_usage"
 type = "sysmon"
 
 [widget.input_volume]
-capsule_group = "Sound"
 show_label = false
 
 [widget.launcher]
@@ -217,9 +203,10 @@ scale = 1.25
 show_label = false
 
 [widget.ram]
-capsule_group = "Monitoring"
 highlight_color = "on_surface"
-show_label = false
+show_value = false
+stat = "ram_used"
+type = "sysmon"
 
 [widget.taskbar]
 anchor = false
@@ -228,16 +215,17 @@ workspace_label_placement = "centered"
 
 [widget.temp]
 capsule = true
-capsule_group = "Monitoring"
 highlight_color = "on_surface"
-show_label = false
+show_value = false
+stat = "cpu_temp"
+type = "sysmon"
 
 [widget.volume]
-capsule_group = "Sound"
 show_label = false
 
 [widget.workspaces]
 anchor = false
 capsule = false
-display = "name"
 empty_color = "tertiary"
+label_source = "name"
+show_labels = true
