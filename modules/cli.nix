@@ -1,5 +1,21 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
+let
+  rust-bin = inputs.rust-overlay.lib.mkRustBin { } pkgs;
+  rustToolchain = rust-bin.fromRustupToolchain {
+    channel = "stable";
+    components = [
+      "rustfmt"
+      "clippy"
+      "rust-analyzer"
+      "rust-src"
+    ];
+    targets = [
+      "x86_64-unknown-linux-gnu"
+      "wasm32-unknown-unknown"
+    ];
+  };
+in
 {
   environment.systemPackages = with pkgs; [
     # Core
@@ -67,7 +83,7 @@
     libxkbcommon
     libXxf86vm
     gcc
-    rustup
+    rustToolchain
   ];
 
 

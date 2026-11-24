@@ -44,6 +44,11 @@ devin = {
     url = "github:Mathew-D/nix-euro-office";
     inputs.nixpkgs.follows = "nixpkgs";
   };
+
+  rust-overlay = {
+    url = "github:oxalica/rust-overlay";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
   };
 
 outputs = { self, nixpkgs, ... }@inputs:

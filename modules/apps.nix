@@ -17,7 +17,7 @@
     masterpdfeditor4
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     scenebuilder
-
+    just
     inputs.devin.packages.x86_64-linux.default
 
   (pkgs.vscode.fhsWithPackages (ps: with ps; [
