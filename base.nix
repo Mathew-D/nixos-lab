@@ -30,10 +30,12 @@
       "flakes"
     ];
     substituters = [
+      "http://lab01.bhs.local:5000"
       "https://cache.nixos.org/"
       "https://noctalia.cachix.org"
       "https://umbriel.cachix.org"
     ];
+    trusted-substituters = [ "http://lab01.bhs.local:5000" ];
     trusted-users = [ "root" "@wheel" "mdusome" ];
     trusted-public-keys = [
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
