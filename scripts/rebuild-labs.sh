@@ -3,8 +3,9 @@
 # lab01 goes first so its nix-serve cache is warm for the rest.
 #
 # Prerequisites:
-#   - commit & push from teacher first; each host rebuilds its own
-#     ~/nixos-lab checkout (flakes can't see uncommitted files)
+#   - commit & push from teacher first; each host re-clones ~/nixos-lab
+#     (flakes can't see uncommitted files, and a fresh clone avoids
+#     dirty-tree merge failures — local edits on hosts are discarded)
 #   - run on a machine that can ssh to *.bhs.local without a password
 set -uo pipefail
 
@@ -18,7 +19,7 @@ total=${#HOSTS[@]}
 rebuild() {
   local host="$1"
   if ssh -o BatchMode=yes -o ConnectTimeout=10 "$host.bhs.local" \
-      "cd ~/nixos-lab && git pull --ff-only && sudo nixos-rebuild switch --accept-flake-config --flake '.#$host'" \
+      "rm -rf ~/nixos-lab && git clone -q https://github.com/Mathew-D/nixos-lab ~/nixos-lab && cd ~/nixos-lab && sudo nixos-rebuild switch --accept-flake-config --flake '.#$host'" \
       >"$LOGDIR/$host.log" 2>&1; then
     touch "$LOGDIR/$host.done"
   else
