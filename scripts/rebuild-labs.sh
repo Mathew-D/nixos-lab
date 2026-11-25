@@ -11,7 +11,7 @@ set -uo pipefail
 rebuild() {
   local host="$1"
   ssh -o BatchMode=yes -o ConnectTimeout=10 "$host.bhs.local" \
-    "cd ~/nixos-lab && git pull --ff-only && sudo nixos-rebuild switch --flake '.#$host'"
+    "cd ~/nixos-lab && git pull --ff-only && sudo nixos-rebuild switch --accept-flake-config --flake '.#$host'"
 }
 
 echo "== lab01 (cache server) =="
