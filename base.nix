@@ -35,9 +35,9 @@
       "https://noctalia.cachix.org"
       "https://umbriel.cachix.org"
     ];
-    trusted-substituters = [ "http://lab01.bhs.local:5000" ];
     trusted-users = [ "root" "@wheel" "mdusome" ];
     trusted-public-keys = [
+      "lab01-cache:sMnETeA05x8W5s5BrkdLiIG+6Npk5CodIy84sOOK/LE="
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       "umbriel.cachix.org-1:JfNq/2yg2S6D6z4Z2dVSZrZlDPQTKtexB6GAVLD98nw="
     ];
